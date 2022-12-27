@@ -1,0 +1,961 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+body a {
+    text-decoration: none;
+}
+
+
+/********** ------ Navbar --------*************/
+
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, .2);
+}
+
+.logo img {
+    width: 150px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 40px 0 0;
+    gap: 40px;
+}
+
+.nav-item .nav-link {
+    color: #15023a;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hamburger div {
+    width: 32px;
+    height: 3px;
+    margin: 0.4rem 40px 0.4rem 0.4rem;
+    background: #15023a;
+    border-radius: 10px;
+    transition: all 1s ease;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+
+/*****---- Responsive Navbar  -----*****/
+
+@media(max-width:768px) {
+    .nav-menu {
+        position: absolute;
+        top: 100px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 0 0;
+        z-index: 999;
+        transition: all 1s ease;
+    }
+    .hamburger {
+        display: block;
+    }
+    .nav-menu.nav-menu-active {
+        left: 0;
+    }
+    .hamburger.hamburger-toggle .line-1 {
+        transform: rotate(-45deg) translate(-8px, 5px);
+        transition: all 1s ease;
+    }
+    .hamburger.hamburger-toggle .line-2 {
+        opacity: 0;
+    }
+    .hamburger.hamburger-toggle .line-3 {
+        transform: rotate(45deg) translate(-8px, -5px);
+        transition: all 1s ease;
+    }
+}
+
+@media(max-width:481px) {
+    .logo img {
+        width: 125px;
+    }
+}
+
+
+/***********------- Hero Slider  ----------*************/
+
+.hero-container {
+    background-color: #fff;
+}
+
+.hero-slider {
+    overflow-x: hidden;
+}
+
+.hero-images {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slider 25s linear infinite;
+    transition: all 1s ease;
+}
+
+.hero-images img {
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    40% {
+        left: -100%;
+    }
+    45% {
+        left: -200%;
+    }
+    65% {
+        left: -200%;
+    }
+    70% {
+        left: -300%;
+    }
+    85% {
+        left: -300%;
+    }
+    95% {
+        left: -400%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+
+/********------- All Items Container ---------********/
+
+.all-items-container {
+    margin-top: 50px;
+}
+
+.item-box {
+    width: 160px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, .2);
+}
+
+.item-box:hover {
+    height: 170px;
+    transition: all .5s ease-in;
+}
+
+.item-box img {
+    width: 50px;
+}
+
+.item-link {
+    color: #15023a;
+}
+
+.item-title {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #15023a;
+}
+
+
+/********------- Responsiveness All Items  ---------********/
+
+@media(max-width:768px) {
+    .all-items-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .all-items-row .col-md-2 {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+/********------- Info Container ---------********/
+
+.info-container {
+    margin-top: 50px;
+}
+
+.info-heading {
+    font-size: 35px;
+    font-weight: 400;
+    color: #000;
+}
+
+.info-row .col-md-4 img {
+    width: 125px;
+}
+
+.info-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.info-detail {
+    margin-top: 10px;
+}
+
+
+/********------- Responsiveness Info Container ---------********/
+
+@media(max-width:768px) {
+    .info-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .info-row .col-md-4 {
+        margin-top: 20px;
+    }
+}
+
+
+/*******------- List Items Slider Items  -------********/
+
+.list-section {
+    position: relative;
+}
+
+.listitem {
+    margin: 20px 0px;
+    width: 385px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, .2);
+    margin-right: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.left-item img {
+    width: 100px;
+    margin-left: 10px;
+}
+
+.right-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.iphone-btn {
+    background-color: #00008b;
+    color: goldenrod;
+    text-align: center;
+    width: 100%;
+    padding: 3px 0px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.item-cost,
+.item-cost-two {
+    margin-top: 6px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #00008b;
+}
+
+.item-variant,
+.item-variant-two {
+    color: #00008b;
+}
+
+.sell-btn {
+    margin-top: 8px;
+    background-color: #ffa500;
+    color: #fff;
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.sell-btn:hover {
+    background-color: rgb(234, 234, 25);
+    transition: all .7s ease;
+}
+
+.list {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+.list-title {
+    color: #15023a;
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.list-container {
+    display: flex;
+    margin-top: 20px;
+    width: max-content;
+    transform: translateX(0px);
+    transition: all 1s ease;
+}
+
+.slider-arrow {
+    width: 100px;
+    height: 100%;
+    background-color: bisque;
+    color: #15023a;
+    border-radius: 50px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    top: 50px;
+}
+
+.left-arrow {
+    right: 0;
+    margin-right: 70px;
+}
+
+.right-arrow {
+    right: 0;
+    margin-right: 20px;
+}
+
+
+/*******-------Responsiveness List Items Slider Items  -------********/
+
+@media(max-width:768px) {
+    .list {
+        overflow: scroll;
+    }
+}
+
+
+/******-------- BuyBacKart  ---------******/
+
+.buy-heading {
+    font-size: 35px;
+    font-weight: 400;
+    color: #000;
+}
+
+.buy-row .col-md-6 {
+    margin-top: 80px;
+    position: relative;
+}
+
+.buy-box {
+    width: 370px;
+    /*height: 300px;*/
+    height: 100px;
+    background-color: #fff;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.buy-title {
+    font-size: 18px;
+    font-weight: bold;
+    /*margin-top: -110px;*/
+}
+
+.buy-paragaraph {
+    margin-top: 20px;
+    display: none;
+}
+
+.buy-box img {
+    width: 80px;
+    position: absolute;
+    top: -50px;
+}
+
+.buy-box:hover {
+    height: 300px;
+    transition: all 1s ease;
+}
+
+.buy-box:hover .buy-title {
+    margin-top: -60px;
+}
+
+.buy-box:hover .buy-paragaraph {
+    display: block;
+}
+
+
+/******-------- Responsiveness BuyBacKart  ---------******/
+
+
+/****--------- Footer Section  ---------***/
+
+.footer-section {
+    width: 100%;
+    margin-top: 50px;
+    background-color: #00008b;
+    color: #fff;
+}
+
+.footer-title,
+.footer-title-two,
+.footer-title-three {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-items,
+.footer-items-two,
+.email-cls,
+.support-cls,
+.call-cls {
+    margin-top: 10px;
+}
+
+.footer-link,
+.footer-link-two {
+    color: #fff;
+}
+
+.footer-link:hover,
+.footer-link-two:hover {
+    color: yellow;
+}
+
+.footer-adress {
+    margin-top: 20px;
+}
+
+
+/****----- Copy Right Section   -------***/
+
+.copy-right-section {
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-right-text {
+    margin-top: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/*******------- Mobile and Tablet Brand Page   ---------*******/
+
+.mobile-brand-section,
+.tablet-brand-section,
+.laptop-brand-section,
+.watch-brand-section,
+.desktop-brand-section,
+.repair-brand-section {
+    margin-top: 50px;
+}
+
+.mobile-brand-left img,
+.tablet-brand-left img,
+.laptop-brand-left img,
+.watch-brand-left img {
+    width: 75px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.mobile-brand-right,
+.tablet-brand-right,
+.laptop-brand-right,
+.watch-brand-right,
+.desktop-brand-right,
+.repair-brand-right {
+    width: 350px;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+}
+
+.mobile-brand-title,
+.tablet-brand-title,
+.laptop-brand-title,
+.watch-brand-title,
+.desktop-brand-title,
+.repair-brand-title {
+    margin: 0px 30px;
+    padding: 16px 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.mobile-brand-texts,
+.tablet-brand-texts,
+.laptop-brand-texts,
+.watch-brand-texts,
+.desktop-brand-texts,
+.repair-brand-texts {
+    margin: 0px 30px;
+}
+
+.mobile-brand-heading,
+.tablet-brand-heading,
+.laptop-brand-heading,
+.watch-brand-heading,
+.desktop-brand-heading,
+.repair-brand-heading {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/*******-------Responsiveness Mobile, Tablet, Laptop, Watch, Desktop Brands Page   ---------*******/
+
+@media(max-width:768px) {
+    .mobile-brand-right,
+    .tablet-brand-right,
+    .laptop-brand-right,
+    .watch-brand-right,
+    .desktop-brand-right,
+    .repair-brand-right {
+        margin-top: 50px;
+    }
+}
+
+
+/*******-------   Blog Page    --------*******/
+
+.blog-section {
+    margin-top: 70px;
+}
+
+.card-img img {
+    width: 100%;
+}
+
+.card-heading {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/******----- Be Partner Section  -------*******/
+
+.partner-section {
+    margin-top: 70px;
+}
+
+.partner-container {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.partner-left {
+    margin-left: 100px;
+}
+
+.partner-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.input-field input {
+    margin: 8px 0px;
+    padding: 5px 0px;
+    border: none;
+    border-bottom: 2px solid grey;
+    width: 350px;
+}
+
+.input-field input::placeholder {
+    padding-left: 20px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    width: 350px;
+    padding: 8px 0px;
+    background-color: #003366;
+    color: #fff;
+    border-radius: 50px;
+    margin-bottom: 50px;
+}
+
+.submit-btn:focus {
+    outline: none;
+}
+
+.contact-box {
+    width: 100%;
+    height: 300px;
+    background-color: #003366;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    color: #fff;
+    position: relative;
+    margin-left: 400px;
+}
+
+.contact-partner {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.contact-title {
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 100px;
+}
+
+.contact-num,
+.info-mail {
+    margin-left: 15px;
+}
+
+.contact-phone,
+.email-envelope {
+    margin-top: 20px;
+}
+
+@media(max-width:768px) {
+    .partner-container .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .partner-left {
+        margin-left: 0px;
+    }
+    .contact-box {
+        margin-left: 0px;
+    }
+}
+
+@media(max-width:381px) {
+    .submit-btn {
+        width: 300px;
+    }
+}
+
+
+/**********---  All Device Brands Mobile   ---******************/
+
+.mobile-samsung-section,
+.mobile-mi-section,
+.mobile-oneplus-section,
+.mobile-realme-section,
+.mobile-oppo-section,
+.mobile-poco-section,
+.mobile-iqoo-section,
+.mobile-vivo-section,
+.mobile-apple-section,
+.mobile-nothing-section,
+.tablet-apple-section,
+.tablet-samsung-section,
+.tablet-lenovo-section,
+.tablet-realme-section,
+.tablet-mi-section,
+.laptop-apple-section,
+.laptop-hp-section,
+.laptop-acer-section,
+.laptop-asus-section,
+.laptop-dell-section,
+.laptop-lenovo-section,
+.laptop-mi-section,
+.laptop-realme-section,
+.laptop-msi-section,
+.laptop-microsoft-section,
+.watch-apple-section {
+    margin-top: 70px;
+}
+
+.mobile-samsung-heading,
+.mobile-mi-heading,
+.mobile-oneplus-heading,
+.mobile-realme-heading,
+.mobile-oppo-heading,
+.mobile-poco-heading,
+.mobile-iqoo-heading,
+.mobile-vivo-heading,
+.mobile-apple-heading,
+.mobile-nothing-heading,
+.tablet-apple-heading,
+.tablet-samsung-heading,
+.tablet-lenovo-heading,
+.tablet-realme-heading,
+.tablet-mi-heading,
+.laptop-apple-heading,
+.laptop-hp-heading,
+.laptop-acer-heading,
+.laptop-asus-heading,
+.laptop-dell-heading,
+.laptop-lenovo-heading,
+.laptop-mi-heading,
+.laptop-realme-heading,
+.laptop-msi-heading,
+.laptop-microsoft-heading,
+.watch-apple-heading {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.mobile-samsung-items,
+.mobile-mi-items,
+.mobile-oneplus-items,
+.mobile-realme-items,
+.mobile-oppo-items,
+.mobile-poco-items,
+.mobile-iqoo-items,
+.mobile-vivo-items,
+.mobile-apple-items,
+.mobile-nothing-items,
+.tablet-apple-items,
+.tablet-samsung-items,
+.tablet-lenovo-items,
+.tablet-realme-items,
+.tablet-mi-items,
+.laptop-apple-items,
+.laptop-hp-items,
+.laptop-acer-items,
+.laptop-asus-items,
+.laptop-dell-items,
+.watch-apple-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-samsung-box,
+.mobile-mi-box,
+.mobile-oneplus-box,
+.mobile-realme-box,
+.mobile-oppo-box,
+.mobile-poco-box,
+.mobile-iqoo-box,
+.mobile-vivo-box,
+.mobile-apple-box,
+.mobile-nothing-box,
+.tablet-apple-box,
+.tablet-samsung-box,
+.tablet-lenovo-box,
+.tablet-realme-box,
+.tablet-mi-box,
+.laptop-apple-box,
+.laptop-hp-box,
+.laptop-acer-box,
+.laptop-asus-box,
+.laptop-dell-box,
+.watch-apple-box {
+    width: 155px;
+    height: 225px;
+    background-color: #fff;
+    box-shadow: 0px 10px 16px rgba(0, 0, 0, .2);
+    margin-left: 50px;
+    margin-top: 50px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e4e6e8;
+}
+
+.mobile-samsung-box img,
+.mobile-mi-box img,
+.mobile-oneplus-box img,
+.mobile-realme-box img,
+.mobile-oppo-box img,
+.mobile-poco-box img,
+.mobile-vivo-box img,
+.mobile-apple-box img,
+.tablet-apple-box img,
+.tablet-samsung-box img,
+.tablet-lenovo-box img,
+.tablet-realme-box img,
+.tablet-mi-box img {
+    width: 50px;
+    height: 100px;
+}
+
+.mobile-iqoo-box img {
+    width: 100px;
+    height: 100px;
+}
+
+.mobile-nothing-box img {
+    width: 80px;
+    height: 100px;
+}
+
+.laptop-apple-box img,
+.laptop-hp-box img,
+.laptop-acer-box img,
+.laptop-asus-box img,
+.laptop-dell-box img {
+    width: 120px;
+    height: 120px;
+}
+
+.watch-apple-box img {
+    width: 100px;
+    height: 100px;
+}
+
+.mobile-samsung-title,
+.mobile-mi-title,
+.mobile-oneplus-title,
+.mobile-realme-title,
+.mobile-oppo-title,
+.mobile-poco-title,
+.mobile-iqoo-title,
+.mobile-vivo-title,
+.mobile-apple-title,
+.mobile-nothing-title,
+.tablet-apple-title,
+.tablet-samsung-title,
+.tablet-lenovo-title,
+.tablet-realme-title,
+.tablet-mi-title,
+.laptop-apple-title,
+.laptop-hp-title,
+.laptop-acer-title,
+.laptop-asus-title,
+.laptop-dell-title,
+.watch-apple-title {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #15023a;
+}
+
+
+/**********---  All Device Brands Mobile   ---******************/
+
+@media(max-width:423px) {
+    .mobile-samsung-box,
+    .mobile-mi-box,
+    .mobile-oneplus-box,
+    .mobile-realme-box,
+    .mobile-oppo-box,
+    .mobile-poco-box,
+    .mobile-iqoo-box,
+    .mobile-vivo-box,
+    .mobile-apple-box,
+    .mobile-nothing-box,
+    .tablet-apple-box,
+    .tablet-samsung-box,
+    .tablet-lenovo-box,
+    .tablet-realme-box,
+    .tablet-mi-box,
+    .laptop-apple-box,
+    .laptop-hp-box,
+    .laptop-acer-box,
+    .laptop-asus-box,
+    .laptop-dell-box,
+    .watch-apple-box {
+        margin-left: 10px;
+    }
+}
